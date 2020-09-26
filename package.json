@@ -1,0 +1,16 @@
+{
+  "name": "marichebot",
+  "version": "2.6.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.7",
+    "discord.js": "^12.2.0"
+  }
+}

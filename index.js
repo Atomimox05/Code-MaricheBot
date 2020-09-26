@@ -27,14 +27,14 @@ const activities_list = [
   "#PipepaChuy",
   "Maiz de finca lo mama bien mamao",
   "Pipe pa omar",
-  ";;donar",
+  "m;donar",
   "Petare",
   "Pipi arrecho",
   "Culo Peluo",
   "Hecho por Atomimox",
   "Recuperar el esequibo",
   "Hecho en socialismo",
-  ";;help",
+  "m;help",
   "Canaima letras rojas",
   "patria.org.ve",
   "Shhhh, o finn ta mamamdo webo",
@@ -65,7 +65,7 @@ client.on('guildMemberAdd', (member) => {
 
 .setAuthor("Hola "+member.user.username)
 .setDescription("**¡Bienvenido(a) a " +member.guild.name+ " <a:tat:698616861272571975><a:cucarachadance:677342604857442308>.")
-.setFooter("Nuestra cantidad de miembros actual es de "+member.guild.memberCount+". Esperamos que disfrutes el server.")
+.setFooter("Nuestra cantidad de miembros actual es de "+member.guild.memberCount+". Esperamos que disfrutes el server. ¡No olvides verificarte para ver los demás chats!")
 .setImage("https://cdn.discordapp.com/attachments/691179999134351380/748276244675559431/66789646_66789645.jpg")
 .setColor("RANDOM");
 member.send(msgChannel);
@@ -93,7 +93,7 @@ client.on('message', (message) => {
   .addField("Comandos de Imágenes", "`chavez`, `elmo`, `fango`, `funar`, `gdfont`, `jking`, `maricheceltics`, `omar`, `panas`, `perezjimenez`", true)
   .addField("Comandos NFSW", "`daimanatetas`, `umiculo`", true)
   .addField("Comandos Útiles", "`avatar`, `avatarserver`, `botinfo`, `serverinfo`", true)
-  .setFooter("Escribe ;;[comando] || Desarrollado por: Atomimox#1935 para Mariche Party Night Club.")
+  .setFooter("Escribe m;[comando] || Desarrollado por: Atomimox#1935 para Mariche Party Night Club.")
   .setImage("https://cdn.discordapp.com/attachments/674086778155696138/731362897774641273/gif.gif")
   .setColor("RANDOM");
   message.channel.send(ayuda); //Estos son todos los comandos que tiene el bot.
@@ -324,7 +324,7 @@ client.on('message', (message) => {
   
       break;
 
-      case ";veneco":
+      case "veneco":
   
       const vzlarandom = Math.floor(Math.random() * 100);
   
@@ -367,7 +367,7 @@ client.on('message', (message) => {
   
       break;
 
-      case ";decir":
+      case "decir":
 
         if(!args) return message.channel.send(":question: | **"+message.author.username+"** Debes escribir un mensaje a enviar.");
       message.channel.send(args.join(" "));//Argumentos a enviar
@@ -485,7 +485,7 @@ client.on('message', (message) => {
 
       break;
 
-      case ";elmo":
+      case "elmo":
 
       var pajizo = [
         "https://cdn.discordapp.com/attachments/674428708504993809/715791004648734781/yes.gif",
