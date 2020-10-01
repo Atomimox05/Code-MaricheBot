@@ -35,6 +35,7 @@ const activities_list = [
   "Recuperar el esequibo",
   "Hecho en socialismo",
   "m;help",
+  "Mariche Nivel 2",
   "Canaima letras rojas",
   "patria.org.ve",
   "Shhhh, o finn ta mamamdo webo",
@@ -82,14 +83,14 @@ client.on('message', (message) => {
   const command = args.shift().toLowerCase();
 
   switch (command) {  //Comando Help
-    case "help":
+    case ";help":
 
   const ayuda = new Discord.MessageEmbed()
   .setTitle("Menú de ayuda :island:")
   .setDescription("Qlq mano, estos son mis comandos.")
   .addField("Comandos de ADMIN/MOD", "`embeds`, `sanciones`")
   .addField("Comandos Informativos", "`actualizacion`, `donar`, `help`, `historia`, `samp`, `social`", true)
-  .addField("Comandos Interactivos", "`amor`, `anonymous`, `chavistometro`, `chimo`, `decir`, `gdfont`, `papulince`, `peruanometro`, `pipe`, `veneco`", true)
+  .addField("Comandos Interactivos", "`amor`, `anonymous`, `chavistometro`, `chimo`, `decir`, `gdfont`, `papulince`, `peruanometro`, `pipe`, `skinmc`, `veneco`", true)
   .addField("Comandos de Imágenes", "`chavez`, `elmo`, `fango`, `funar`, `gdfont`, `jking`, `maricheceltics`, `omar`, `panas`, `perezjimenez`", true)
   .addField("Comandos NFSW", "`daimanatetas`, `umiculo`", true)
   .addField("Comandos Útiles", "`avatar`, `avatarserver`, `botinfo`, `serverinfo`", true)
@@ -100,15 +101,15 @@ client.on('message', (message) => {
 
   break;
 
-  case "actualizacion": //Comando actualización
+  case ";actualizacion": //Comando actualización
 
     const actualizacion = new Discord.MessageEmbed()
-    .setTitle("Actualización del bot "+ version) //La variable "version" muestra la versión del bot desde el package.json
+    .setTitle("Actualización del bot "+version+" :mailbox_with_mail:") //La variable "version" muestra la versión del bot desde el package.json
     .setThumbnail("https://cdn.discordapp.com/attachments/691179999134351380/728831844463673414/settings.png")
-    .setDescription("El bot se actualiza cada cierto tiempo para corregir errores en los comandos o para agregar nuevos. Esta actualización trae:\n\nArreglos de errores en algunos comandos, y cambio de nombre de los siguientes comandos: marichefc >> maricheceltics, mairatetas >> daimanatetas\n\nMás imagenes en los comandos *chavez*, *umiculo*, *mairatetas*, *fango*, *omar* y *funar*.\n\n Esta será la versión final del bot y su código será liberado para los que quieran aprender a hacer bots con Discord.js. Puedes encontrarlo en [GitHub]().\n\nEl bot seguirá en funcionamiento hasta el 18 de noviembre de este año. Gracias por su apoyo :sparkling_heart:.")
+    .setDescription("El bot se actualiza cada cierto tiempo para corregir errores en los comandos o para agregar nuevos. Esta actualización trae:\n\nArreglo de error en el prefix. Y activación del comando **skinmc**.\n\n**Nuevo prefix:** `m;`\n\nNueva imagen de perfil (aplica para la extención *Mariche Bot Dolar*).\n\n El código fuente del está liberado para los que quieran aprender a hacer bots con Discord.js. Puedes encontrarlo en [GitHub](https://github.com/Atomimox05/Code-MaricheBot). Gracias por su apoyo :sparkling_heart:.")
     .setColor("RANDOM")
     .setImage("https://cdn.discordapp.com/attachments/674086778155696138/731362897774641273/gif.gif")
-    .setFooter("Fecha de actualización: 30/09/20");
+    .setFooter("Fecha de actualización: 01/10/20");
     message.channel.send(actualizacion);
 
     message.delete({ timeout: 1000 }) //Mensaje del usuario eliminado en 1s
@@ -117,7 +118,7 @@ client.on('message', (message) => {
   }
 
   switch (command) { //Comandos de los canales de información y reglas
-    case "embeds":
+    case ";embeds":
 
       if(!message.guild.me.hasPermission("MANAGE_CHANNELS")) { //Permiso necesario: Editar canales
         return message.channel.send("**NO PUEDO MOSTRAR ESTE COMANDO**")
@@ -138,7 +139,7 @@ client.on('message', (message) => {
   
     break;
   
-    case "samp": //Comando SAMP
+    case ";samp": //Comando SAMP
 
     const SAMP = new Discord.MessageEmbed()
     .setTitle("Aquí esta la info para jugar SAMP")
@@ -153,7 +154,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "botinfo":
+      case ";botinfo":
 
       const botinfo = new Discord.MessageEmbed()
       .setAuthor("Información del bot")
@@ -161,7 +162,7 @@ client.on('message', (message) => {
       .setColor("RANDOM")
       .addField("Desarrollador", "Atomimox#1935")
       .addField("Versión", version, true)
-      .addField("Programación", "`• Escrito en: Javascript\n• Librería: Discord.js v^12.2.0\n• Prefix: ;;`", true)
+      .addField("Programación", "`• Escrito en: Javascript\n• Librería: Discord.js v^12.2.0\n• Prefix: m;`", true)
       .addField("Creación", "Jueves, 28 de Mayo de 2020 a las 10:18:29 pm", true)
       .addField("ID", "715690490720419943", true)
       .addField("Bot privado", "Exclusivo para Mariche Country Club", true)
@@ -170,7 +171,7 @@ client.on('message', (message) => {
 
     break;
 
-    case "serverinfo":
+    case ";serverinfo":
 
       var server = message.guild;
   
@@ -190,7 +191,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "donar":
+      case ";donar":
 
       message.channel.send(":white_check_mark: | **"+ message.author.username +"**, te he enviado los métodos de donación a tus mensajes privados.");
   
@@ -207,7 +208,7 @@ client.on('message', (message) => {
     
       break;  
 
-      case "social":
+      case ";social":
 
       const redes = new Discord.MessageEmbed()
       .setTitle("Redes del grupo :city_dusk:")
@@ -225,10 +226,10 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "amor":
+      case ";amor":
 
       let users = message.mentions.users.map(m => m.username).join(' y '); //Mencion a 2 usuarios.
-      if(!users) return message.channel.send(":heart_decoration: | Menciona a dos usuarios para calcular su amor. Ejemplo: `;;amor @user y @user1`");
+      if(!users) return message.channel.send(":heart_decoration: | Menciona a dos usuarios para calcular su amor. Ejemplo: `m;amor @user y @user1`");
             
       const random = Math.floor(Math.random() * 100); //Porcentaje al 100%
       let heard = ""; //Variable que mostrara un texto, en este caso un emote.
@@ -252,7 +253,7 @@ client.on('message', (message) => {
 
       break;
 
-    case "chavistometro":
+    case ";chavistometro":
 
       const Chaverandom = Math.floor(Math.random() * 100); //Porcentaje al 100%
   
@@ -271,7 +272,7 @@ client.on('message', (message) => {
       }
 
     switch (command) {
-      case "pipe":
+      case ";pipe":
   
       const penis = Math.floor(Math.random() * 31); //Hasta de 30cm
   
@@ -288,7 +289,7 @@ client.on('message', (message) => {
   
       break;
   
-      case "papulince":
+      case ";papulince":
   
       const papu = Math.floor(Math.random() * 100);
   
@@ -307,7 +308,7 @@ client.on('message', (message) => {
       }
 
     switch (command) {
-      case "peruanometro":
+      case ";peruanometro":
   
       const Perurandom = Math.floor(Math.random() * 100);
   
@@ -324,7 +325,7 @@ client.on('message', (message) => {
   
       break;
 
-      case "veneco":
+      case ";veneco":
   
       const vzlarandom = Math.floor(Math.random() * 100);
   
@@ -343,15 +344,15 @@ client.on('message', (message) => {
       }
 
     switch (command) {
-      case "chimo":
+      case ";chimo":
   
-        let user = message.mentions.users.first() || message.author;
+      let user = message.mentions.users.first() || message.author;
   
-        if (!user)
-          return message.reply(":x: **Debes mencionar a alguien para darle chimo mano, no seas pichirre**");
+      if (!user)
+        return message.reply(":x: **Debes mencionar a alguien para darle chimo mano, no seas pichirre**");
     
-        if (user.id === message.author.id)
-          return message.channel.send("**"+message.author.username+"**, toma chimo mano <:chimoeltigre:721433761207681105> :heart:");
+      if (user.id === message.author.id)
+        return message.channel.send("**"+message.author.username+"**, toma chimo mano <:chimoeltigre:721433761207681105> :heart:");
     
         var mareo = [
           " <:chavezfinger:671813323993513996> <:chimoeltigre:721433761207681105>", //Normal
@@ -367,7 +368,7 @@ client.on('message', (message) => {
   
       break;
 
-      case "decir":
+      case ";decir":
 
         if(!args) return message.channel.send(":question: | **"+message.author.username+"** Debes escribir un mensaje a enviar.");
       message.channel.send(args.join(" "));//Argumentos a enviar
@@ -378,7 +379,7 @@ client.on('message', (message) => {
       }
 
    switch (command) {
-     case "umiculo":
+     case ";umiculo":
 
       if(!message.channel.nsfw) //Permisos de canal NFSW
         return message.channel.send(":underage: | **"+message.author.username+"** Solo puedes usar este comando en un canal **NFSW**.")
@@ -435,7 +436,7 @@ client.on('message', (message) => {
 
     break;
 
-    case "perezjimenez":
+    case ";perezjimenez":
 
       var marcos = [
         "https://cdn.discordapp.com/attachments/691179999134351380/728745391234744400/General_Marcos_Evangelista_Perez_Jimenez_Venezuela.jpg",
@@ -462,7 +463,7 @@ client.on('message', (message) => {
    }
 
     switch (command) {
-      case "panas":
+      case ";panas":
 
       const keivver = new Discord.MessageEmbed()
       .setImage("https://media.discordapp.net/attachments/691179999134351380/715782866767970354/FB_IMG_15897438932827345.jpg?width=520&height=276");
@@ -485,7 +486,7 @@ client.on('message', (message) => {
 
       break;
 
-      case "elmo":
+      case ";elmo":
 
       var pajizo = [
         "https://cdn.discordapp.com/attachments/674428708504993809/715791004648734781/yes.gif",
@@ -517,7 +518,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "jking":
+      case ";jking":
 
       const poceta = new Discord.MessageEmbed()
       .setTitle("J_King Posetiao :scream:")
@@ -528,7 +529,7 @@ client.on('message', (message) => {
 
       break;
 
-      case "omar":
+      case ";omar":
 
       var enrique = [
         "https://cdn.discordapp.com/attachments/691179999134351380/731952821624373288/Snapchat-1480645596.png",
@@ -555,7 +556,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "funar":
+      case ";funar":
 
       let miembro = message.mentions.users.first() || message.guild.members.resolve(args[0]); //Mención a usuario normal o con la ID
 
@@ -597,7 +598,7 @@ client.on('message', (message) => {
     
     break;
 
-    case "chavez":
+    case ";chavez":
 
       var hugo = [
         "https://cdn.discordapp.com/attachments/691179999134351380/722634677831204874/presidente-chavez-twitter_400x400.png",
@@ -633,7 +634,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "avatar":
+      case ";avatar":
         
         let perfil = message.mentions.users.first() || message.guild.members.resolve(args[0]) || message.author;
 
@@ -648,7 +649,7 @@ client.on('message', (message) => {
 
       break;
 
-      case "fango":
+      case ";fango":
 
       var fango = [
         "https://cdn.discordapp.com/attachments/691179999134351380/735962990892941522/peta-demanda-a-un-fotografo-en-nombre-del-simio-que-se-tomo-una-selfie-1443144358.png",
@@ -675,7 +676,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "avatarserver":
+      case ";avatarserver":
       
         var server = message.guild;
     
@@ -686,10 +687,31 @@ client.on('message', (message) => {
         message.channel.send(imgserver);
     
       break;
+
+      case ";skinmc":
+
+        let skin = args.join(' ') //Nombre de la skin
+
+        if (!args[0]) { //Si no proporciona el nombre de la skin
+            return message.channel.send("Dime el nombre de una skin, por favor.") //Esto enviara un mensaje si no se envió el nombre de la skin
+        }
+    
+        let url = `https://minecraftskinstealer.com/api/v1/skin/render/fullbody/${skin}/700`;  //Esto sera la imagen de la skin
+    
+        const mcsskin = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setDescription("Resultado de búsqueda para: "+skin+".")
+        .setImage(url)
+    
+    message.channel.send(mcsskin) //Enviamos el embed al canal
+    
+    //Comando creado por: Josue23#2852
+
+      break;
     }
 
     switch(command) {
-      case "daimanatetas":
+      case ";daimanatetas":
 
         if(!message.channel.nsfw)
         return message.channel.send(":underage: | **"+message.author.username+"** Solo puedes usar este comando en un canal **NFSW**.")
@@ -732,7 +754,7 @@ client.on('message', (message) => {
 
       break;
 
-      case "maricheceltics":
+      case ";maricheceltics":
 
         var futbolmc = [
           "https://cdn.discordapp.com/attachments/691179999134351380/748279149877002280/marichecelctics.png",
@@ -751,7 +773,7 @@ client.on('message', (message) => {
     }
 
     switch (command) {
-      case "gdfont": //Este comando no necesita un npm
+      case ";gdfont": //Este comando no necesita un npm
   
         if(!args[0]) return message.channel.send(":x: | Necesitas escribir un argumento.") 
     
@@ -769,7 +791,7 @@ client.on('message', (message) => {
   
         break;
         
-        case "anonymous":
+        case ";anonymous":
   
           let dominios = ["outlook.com", "gmail.com", "hotmail.com", "yahoo.com", "live.com", "yandex.com"] //Se pueden cambiar a mas direcciones de correo
   
@@ -822,7 +844,7 @@ client.on('message', (message) => {
       //Comandos de texto largo
 
     switch (command) {
-      case "sanciones":
+      case ";sanciones":
  
       const sanciones = new Discord.MessageEmbed()
       .setTitle("Sanciones para los miembros del server :rotating_light:")
@@ -836,7 +858,7 @@ client.on('message', (message) => {
  
       break;
 
-      case "historia":
+      case ";historia":
 
         if(cooldown.has(message.author.id)){
           message.channel.send(":no_entry: | Espera 10 segundos para volver a usar el comando.");
@@ -851,12 +873,12 @@ client.on('message', (message) => {
   
       const history = new Discord.MessageEmbed()
       .setTitle("Historia del servidor :notebook_with_decorative_cover:")
-      .setDescription("Creado por Donomar, anteriormente llamado Venecoland, pero fue raideado por Galahad y SadCat.\n\nPersonajes influyentes:\n\n**Omar:** Dueño y dictador de esta verga antes hacia memes 24/7 pero ya no hace eso mano, que chimbo, ahora es puro jugar amoung us y terraria. También baneaba al que medio se moviese sapegato. Ahora le vendio Veneco Posting a chui nojoda.\n\n**Atomimox:** Hizo todo lo que tu vez en esta verga, el pana es senda lacra y ayuda a todo el mundo\n\n**xSmau:** nojoda es un de los mejores Mod's del server, una lacra. xSmau the best ever\n\n**Daimana:** una de las pocas chamas del sever, una vez se pico porque nadie la queria de mod y se fue, pero volvio odiosa y no habla con nadie :pensive:\n\n**Offline:** era el pure del server, Se salio xq ya no se le hacia interesante el server y no tiene nada que hacer. Fue el mejor campeón de xSmau y se cojia los tubos de escape de los carr0s.\n\n**Elmo:** o tambien conocido como masturbador cronico, el menor no puede medio ver una nalga o un pixel de teta porque el webo lo tiene mas parao que carro en cola e gasolina.\n\n**Keiiver:** el peruano del grupo, antes regalaba netflix a todo el mundo pero ahora se puso inactivo.\n\n**Yukatan:** coño se este tipo no hay mucho que decir, es urde convive pero se la pasa besandose con fango.\n\n**Kartoon:** otro pure mas, el mnr a veces tiene la razon cuando habla pero se la pasa es puro jugando, odia ser mod\n\n**Jake the sapo:** otro maracucho mas njd, puro violin aqui XD, el tipo es serio en la mamawevada pero tambien tiene peos con el internet csm.\n\n**Fango:** el esclavo del grupo, aveces se escapa de la jaula pero si no le paras bolas no te hace nada.\n\n**Penka:** un veterano de guerra, el convive lleva mas tiempo aqui que el propio server XD, pana serio.")
+      .setDescription("Creado por Donomar, anteriormente llamado Venecoland, pero fue raideado por Galahad y SadCat.\n\nPersonajes influyentes:\n\n**Omar:** Dueño y dictador de esta verga antes hacia memes 24/7 pero ya no hace eso mano, que chimbo, ahora es puro jugar amoung us y terraria. También baneaba al que medio se moviese sapegato. Ahora le vendio Veneco Posting a chui nojoda.\n\n**Atomimox:** Hizo todo lo que tu vez en esta verga, el pana es senda lacra y ayuda a todo el mundo\n\n**xSmau:** nojoda es un de los mejores Mod's del server, una lacra. xSmau the best ever\n\n**Daimana:** una de las pocas chamas del sever, una vez se pico porque nadie la queria de mod y se fue, pero volvio odiosa y no habla con nadie :pensive:\n\n**Offline:** era el pure del server, Se salio xq ya no se le hacia interesante el server y no tiene nada que hacer. Fue el mejor campeón de xSmau y se cojia los tubos de escape de los carr0s.\n\n**Elmo:** o tambien conocido como masturbador cronico, el menor no puede medio ver una nalga o un pixel de teta porque el webo lo tiene mas parao que carro en cola e gasolina.\n\n**Keiiver:** el peruano del grupo, antes regalaba netflix a todo el mundo pero ahora se puso inactivo.\n\n**Yukatan:** coño se este tipo no hay mucho que decir, es urde convive pero se la pasa besandose con fango.\n\n**Kartoon:** otro pure mas, el mnr a veces tiene la razon cuando habla pero se la pasa es puro jugando, odia ser mod\n\n**Oruga:** otro maracucho mas njd, puro violin aqui XD, el tipo es serio en la mamawevada pero tambien tiene peos con el internet csm.\n\n**Fango:** el esclavo del grupo, aveces se escapa de la jaula pero si no le paras bolas no te hace nada.\n\n**Penka:** un veterano de guerra, el convive lleva mas tiempo aqui que el propio server XD, pana serio.")
       .setColor("CC3333");
       message.channel.send(history);
   
       const historia = new Discord.MessageEmbed()
-      .setDescription("**Gato:** Pana super convive, el era antes pinga e activo pero se envisio al samp y ahora ni se conecta njd.\n\n**Luih:** Un pana gafo y urde pegaO, el pana fue gobernador pero se salio por una mariquera del server y perdio todo, no le gusta que umi mame webo.\n\n**Luis:** coño es pana era activo 24/7 y top 1 del server pero ahora es relajao.\n\n**Umi:** la otaku de barinas, super pana y admin del grupo e whatsapp, puro pendiente del pipe del novio apue, jeva de medio server ahora.\n\n**Alvaro:** era pana antes pero agarro toxicidad, se puso urde mrc y piro, odia a omar.\n\n**Hitler con tetas:** esta es mas otakus que todos ike puro hentai pene y vainas raras\n\n**J_King:** el pana pocetiao o el duende del server, a veces sale de su cueva pa jugar samp con gato pero si no aparece por un tiempo es que se lo trago la poceta :scream:\n\n**Astroberto:** o mejor como astrowebo el cuando llego era un tipo que hacia reir y era serio, luego desaparecio por 3 meses poruqe le robaron la canaima por awebonaio XDDD pero volvio toxico e insultando a todos, esta baneado permanente.\n\n**Abraham:** un otaku maracucho, echale bolas, este manin hace memes y videos calida, pero tiene pinga e peos con el interne.\n\n**Virus:** el pana llego de la nada y se gano su plutonio que beta, es la esposa de nefario y se dan pipe todos los dias.\n\n**Elie:** es el admin de unusual, bendecido por el pana miguel, pendiente de una arrecostadera con keive.\n\n**Khelder:** coño mano welve :sob:, el pana gano las primeras elecciones pero un dia antes murio y nadie supo mas nada de el :sob:\n\n**Roxana:** otra veterana de guerra, nunca se conecta pero ahi esta con los zamuros encima csm #Roxanawelve :pensive:\n\n**Giobanny:** coño este pana a veces se pone hiper ladilla y y le dan picasones de culo, el mismo lo nombre lo dice, electrico. Peeo el pana se fue del server porque todos lo odiaban.")
+      .setDescription("**Gato:** Pana super convive, el era antes pinga e activo pero se envisio al samp y ahora ni se conecta njd.\n\n**Luih:** Un pana gafo y urde pegaO, el pana fue gobernador pero se salio por una mariquera del server y perdio todo, no le gusta que umi mame webo.\n\n**Luis:** coño es pana era activo 24/7 y top 1 del server pero ahora es relajao.\n\n**Umi:** la otaku de barinas, super pana y admin del grupo e whatsapp, puro pendiente del pipe del novio apue, jeva de medio server ahora.\n\n**Alvaro:** era pana antes pero agarro toxicidad, se puso urde mrc y piro, odia a omar.\n\n**Hitler con tetas:** esta es mas otakus que todos ike puro hentai pene y vainas raras\n\n**J_King:** el pana pocetiao o el duende del server, a veces sale de su cueva pa jugar samp con gato pero si no aparece por un tiempo es que se lo trago la poceta :scream:\n\n**Astroberto:** o mejor como astrowebo el cuando llego era un tipo que hacia reir y era serio, luego desaparecio por 3 meses poruqe le robaron la canaima por awebonaio XDDD pero volvio toxico e insultando a todos, esta baneado permanente.\n\n**Abraham:** un otaku maracucho, echale bolas, este manin hace memes y videos calida, pero tiene pinga e peos con el interne.\n\n**Virus:** el pana llego de la nada y se gano su plutonio que beta, es la esposa de nefario y se dan pipe todos los dias.\n\n**Elie:** es el admin de unusual, bendecido por el pana miguel, pendiente de una arrecostadera con keive.\n\n**Khelder:** coño mano welve :sob:, el pana gano las primeras elecciones pero un dia antes murio y nadie supo mas nada de el :sob:\n\n**Roxana:** otra veterana de guerra, nunca se conecta pero ahi esta con los zamuros encima csm #Roxanawelve :pensive:\n\n**Giobanny:** coño este pana a veces se pone hiper ladilla y y le dan picasones de culo, la mayoria lo odia. El truco esta en no pararle bolas.")
       .setColor("RANDOM");
       message.channel.send(historia);
   
@@ -872,7 +894,7 @@ client.on('message', (message) => {
       //Embeds usados en la información y reglas
 
     switch (command) {
-      case "2003maricherules2003":
+      case ";2003maricherules2003":
   
         var server = message.guild;
   
@@ -917,7 +939,7 @@ client.on('message', (message) => {
   
         break;
   
-        case "2002maricheinfo2002":
+        case ";2002maricheinfo2002":
   
         var server = message.guild;
   
